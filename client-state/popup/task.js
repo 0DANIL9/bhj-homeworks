@@ -1,14 +1,16 @@
 const btnCloseModal = document.querySelector(`.modal__close`);
-const modal = document.querySelector(`.modal`);
+const modal = document.getElementById(`subscribe-modal`);
 
 window.addEventListener(`load`, () => {
   if (getCookie(`modal`) === `closet`) {
     modal.classList.remove(`modal_active`);
+    modal.classList.add(`modal`);
   }
 })
 
 btnCloseModal.addEventListener(`click`, () => {
   modal.classList.remove(`modal_active`);
+  modal.classList.add(`modal`);
   setCookie('modal', `closet`);
   
 })
@@ -24,3 +26,4 @@ function getCookie(name) {
     return parts.pop();
   }
 }
+
